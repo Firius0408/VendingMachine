@@ -16,4 +16,10 @@ public class Chips extends Item
     {
         // Add your action code here.
     }    
+    
+    public Chips(double price, GreenfootImage image) {
+        super(price);
+        image.scale(190, 250);
+        setImage(image);
+    }
 }

@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lays here.
+ * Write a description of class Doritos here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Lays extends Chips
+public class Doritos extends Chips
 {
     /**
-     * Act - do whatever the Lays wants to do. This method is called whenever
+     * Act - do whatever the Doritos wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
@@ -17,7 +17,7 @@ public class Lays extends Chips
         // Add your action code here.
     }    
     
-    public Lays() {
-        super(3.28, new GreenfootImage("lays.jpg"));
+    public Doritos() {
+        super(3.98, new GreenfootImage("doritos.jpg"));
     }
 }
