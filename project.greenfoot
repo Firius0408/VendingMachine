@@ -1,8 +1,15 @@
 #Greenfoot properties
-#Mon Dec 04 20:33:07 PST 2017
+#Mon Dec 04 20:37:40 PST 2017
+class.Lays.image=lays.jpg
+class.VendingMachineWorld.superclass=greenfoot.World
+class.VendingMachineWorld.image=vendingmachine.jpg
+mainWindow.width=850
+class.Chips.superclass=Item
+class.Item.superclass=greenfoot.Actor
 project.charset=UTF-8
 version=3.0.0
+world.lastInstantiated=VendingMachineWorld
 mainWindow.y=40
 mainWindow.x=40
 mainWindow.height=600
-mainWindow.width=850
+class.Lays.superclass=Chips
