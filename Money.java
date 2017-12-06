@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.text.DecimalFormat;
 /**
  * Write a description of class Money here.
  * 
@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Money extends Actor
 {
     private double money;
+    private static DecimalFormat format = new DecimalFormat("###,###,#00.00");
     /**
      * Act - do whatever the Money wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -30,7 +31,7 @@ public class Money extends Actor
         while (!isInteger(response)) {
             response = Greenfoot.ask("Please provide a dollar amount.");
         }
-        money += Integer.parseInt(response);
+        money += Double.parseDouble(response);
     }
     
     public void removeMoney(double price) {
@@ -39,6 +40,10 @@ public class Money extends Actor
     
     public double getMoney() {
         return money;
+    }
+    
+    public String getMoneyString() {
+        return format.format(money);
     }
     
     public void clicky() {
@@ -64,7 +69,7 @@ public class Money extends Actor
         }
         for (; i < length; i++) {
             char c = str.charAt(i);
-            if (c < '0' || c > '9') {
+            if ((c < '0' || c > '9') && c != '.') {
                 return false;
             }
         }
