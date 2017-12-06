@@ -16,6 +16,7 @@ public class Money extends Actor
     public void act() 
     {
         // Add your action code here.
+        clicky();
     }    
 
     public Money() {
@@ -38,6 +39,12 @@ public class Money extends Actor
     
     public double getMoney() {
         return money;
+    }
+    
+    public void clicky() {
+        if(Greenfoot.mouseClicked(this)) {
+            addMoney();
+        }
     }
 
     public boolean isInteger(String str) { // checks user input to ensure it's an integer

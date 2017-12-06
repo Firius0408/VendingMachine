@@ -44,4 +44,5 @@ public class MoneyAmount extends Actor
         image.drawString(Double.toString(world.getMoney()), 20, 100);
         //image = new GreenfootImage(Double.toString(getWorldOfType(VendingMachineWorld.class).getMoney().getMoney()), 100, Color.BLACK, Color.WHITE);
     }
+    
 }

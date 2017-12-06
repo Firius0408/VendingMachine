@@ -8,8 +8,8 @@ import java.util.ArrayList;
  */
 public class VendingMachineWorld extends World
 {
-    ArrayList<Item> stock;
-    Money money;
+    private ArrayList<Item> stock;
+    private Money money;
     /**
      * Constructor for objects of class VendingMachineWorld.
      * 
@@ -30,24 +30,6 @@ public class VendingMachineWorld extends World
         Doritos doritos = new Doritos();
         stock.add(doritos);
         addObject(doritos, 330, 125);
-    }
-
-    public void act() {
-        clicky();
-
-    }
-
-    public void clicky() {
-        for (Item i : stock) {
-            if(Greenfoot.mouseClicked(i)) {
-                i.choose();
-                break;
-            }
-        }
-
-        if(Greenfoot.mouseClicked(money)) {
-            money.addMoney();
-        }
     }
 
     public double getMoney() {

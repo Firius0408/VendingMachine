@@ -19,6 +19,7 @@ public class Item extends Actor
     public void act() 
     {
         // Add your action code here.
+        clicky();
         checky();
     }    
 
@@ -26,7 +27,7 @@ public class Item extends Actor
         this.price = price;
         stock = Greenfoot.getRandomNumber(10);
     }
-    
+
     protected void addedToWorld(World world) {
         this.world = (VendingMachineWorld) world;
     }
@@ -36,7 +37,13 @@ public class Item extends Actor
             world.getMoneyObj().removeMoney(price);
             stock--;
         }
-        
+
+    }
+
+    public void clicky() {
+        if(Greenfoot.mouseClicked(this)) {
+            choose();
+        }
     }
 
     public void checky() {
