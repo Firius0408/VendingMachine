@@ -22,6 +22,8 @@ public class VendingMachineWorld extends World
         setBackground("vendingmachine.jpg");
         money = new Money();
         addObject(money, 800, 700);
+        MoneyAmount moneyAmount = new MoneyAmount();
+        addObject(moneyAmount, 200, 700);
         Lays lays = new Lays();
         stock.add(lays);
         addObject(lays, 110, 125);
@@ -29,17 +31,30 @@ public class VendingMachineWorld extends World
         stock.add(doritos);
         addObject(doritos, 330, 125);
     }
-    
+
     public void act() {
+        clicky();
+
+    }
+
+    public void clicky() {
         for (Item i : stock) {
             if(Greenfoot.mouseClicked(i)) {
                 i.choose();
                 break;
             }
         }
-        
+
         if(Greenfoot.mouseClicked(money)) {
             money.addMoney();
         }
+    }
+
+    public double getMoney() {
+        return money.getMoney();
+    }
+    
+    public Money getMoneyObj() {
+        return money;
     }
 }

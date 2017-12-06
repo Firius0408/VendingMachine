@@ -28,7 +28,16 @@ public class Money extends Actor
         String response = Greenfoot.ask("How much money to put in?");
         while (!isInteger(response)) {
             response = Greenfoot.ask("Please provide a dollar amount.");
-        } 
+        }
+        money += Integer.parseInt(response);
+    }
+    
+    public void removeMoney(double price) {
+        money -= price;
+    }
+    
+    public double getMoney() {
+        return money;
     }
 
     public boolean isInteger(String str) { // checks user input to ensure it's an integer

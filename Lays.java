@@ -11,11 +11,12 @@ public class Lays extends Chips
     /**
      * Act - do whatever the Lays wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     
     public void act() 
     {
         // Add your action code here.
-    }    
+    }   
+    */
     
     public Lays() {
         super(3.28, new GreenfootImage("lays.jpg"));

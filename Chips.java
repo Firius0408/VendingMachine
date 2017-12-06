@@ -11,11 +11,12 @@ public class Chips extends Item
     /**
      * Act - do whatever the Chips wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     
     public void act() 
     {
         // Add your action code here.
     }    
+    */
     
     public Chips(double price, GreenfootImage image) {
         super(price);

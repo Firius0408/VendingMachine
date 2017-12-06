@@ -11,11 +11,12 @@ public class Doritos extends Chips
     /**
      * Act - do whatever the Doritos wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+     *
     public void act() 
     {
         // Add your action code here.
     }    
+    */
     
     public Doritos() {
         super(3.98, new GreenfootImage("doritos.jpg"));
