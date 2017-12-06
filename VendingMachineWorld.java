@@ -30,6 +30,12 @@ public class VendingMachineWorld extends World
         Doritos doritos = new Doritos();
         stock.add(doritos);
         addObject(doritos, 330, 125);
+        Fritos fritos = new Fritos();
+        stock.add(fritos);
+        addObject(fritos, 550, 125);
+        Takis takis = new Takis();
+        stock.add(takis);
+        addObject(takis, 770, 125);
     }
 
     public double getMoney() {

@@ -36,8 +36,13 @@ public class Item extends Actor
         if(world.getMoney() >= price) {
             world.getMoneyObj().removeMoney(price);
             stock--;
+            falling();
         }
-
+               
+    }
+    
+    protected void falling() {
+        
     }
 
     public void clicky() {

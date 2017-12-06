@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Lays here.
+ * Write a description of class takis here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Lays extends Item
+public class Takis extends Item
 {
-    private static GreenfootImage image = new GreenfootImage("lays.jpg");
-    private static double price = 3.28;
+    private static GreenfootImage image = new GreenfootImage("takis.png");
+    private static double price = 2.59;
     /**
      * Act - do whatever the Lays wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,16 +20,16 @@ public class Lays extends Item
     }   
      */
 
-    public Lays() {
+    public Takis() {
         super(price);
-        image.scale(190, 250);
+        image.scale(220, 250);
         image.drawString(Double.toString(price), 85, 20);
         setImage(image);
     }
 
     public void falling() {
-        GreenfootImage tempImage = new GreenfootImage("lays.jpg");
-        tempImage.scale(190, 250);
+        GreenfootImage tempImage = new GreenfootImage("takis.png");
+        tempImage.scale(220, 250);
         getWorld().addObject(new FallingItem(tempImage), getX(), getY());
     }
 }

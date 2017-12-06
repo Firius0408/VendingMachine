@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.*;
 /**
  * Write a description of class MoneyAmount here.
  * 
@@ -26,7 +26,7 @@ public class MoneyAmount extends Actor
         image = new GreenfootImage(400, 200);
         image.setColor(Color.WHITE);
         image.fill();
-        image.setFont(new Font(100));
+        image.setFont(new Font(Font.DIALOG, Font.PLAIN, 100));
         image.setColor(Color.BLACK);
         //image.drawString(Double.toString(getWorldOfType(VendingMachineWorld.class).getMoney().getMoney()), 10, 10);
         setImage(image);
@@ -41,7 +41,7 @@ public class MoneyAmount extends Actor
         image.setColor(Color.WHITE);
         image.fill();
         image.setColor(Color.BLACK);
-        image.drawString(world.getMoneyObj().getMoneyString(), 20, 100);
+        image.drawString("$" + world.getMoneyObj().getMoneyString(), 20, 100);
         //image = new GreenfootImage(Double.toString(getWorldOfType(VendingMachineWorld.class).getMoney().getMoney()), 100, Color.BLACK, Color.WHITE);
     }
     

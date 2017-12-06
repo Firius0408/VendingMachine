@@ -26,4 +26,10 @@ public class Doritos extends Item
         image.drawString(Double.toString(price), 85, 20);
         setImage(image);
     }
+    
+    public void falling() {
+        GreenfootImage tempImage = new GreenfootImage("doritos.jpg");
+        tempImage.scale(190, 250);
+        getWorld().addObject(new FallingItem(tempImage), getX(), getY());
+    }
 }

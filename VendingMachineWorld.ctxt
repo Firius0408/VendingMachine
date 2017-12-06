@@ -1,11 +1,9 @@
 #BlueJ class context
-comment0.target=VendingMachineWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ VendingMachineWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.params=
+comment0.target=VendingMachineWorld()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ VendingMachineWorld.\r\n\ \r\n
 comment1.params=
-comment1.target=VendingMachineWorld()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ VendingMachineWorld.\r\n\ \r\n
+comment1.target=double\ getMoney()
 comment2.params=
-comment2.target=double\ getMoney()
-comment3.params=
-comment3.target=Money\ getMoneyObj()
-numComments=4
+comment2.target=Money\ getMoneyObj()
+numComments=3

@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.text.DecimalFormat;
+import java.awt.*;
 /**
  * Write a description of class Money here.
  * 
@@ -27,25 +28,23 @@ public class Money extends Actor
     }
 
     public void addMoney() {
-        String response = Greenfoot.ask("How much money to put in?");
-        while (!isInteger(response)) {
-            response = Greenfoot.ask("Please provide a dollar amount.");
+        if(Greenfoot.getRandomNumber(10) < 9) {
+            money++;
         }
-        money += Double.parseDouble(response);
     }
-    
+
     public void removeMoney(double price) {
         money -= price;
     }
-    
+
     public double getMoney() {
         return money;
     }
-    
+
     public String getMoneyString() {
         return format.format(money);
     }
-    
+
     public void clicky() {
         if(Greenfoot.mouseClicked(this)) {
             addMoney();
