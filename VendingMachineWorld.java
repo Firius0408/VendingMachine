@@ -8,19 +8,19 @@ import java.util.ArrayList;
  */
 public class VendingMachineWorld extends World
 {
-    private ArrayList<Item> stock;
-    private Money money;
-    private boolean flag = true;
-    private boolean flag1 = true;
+    private ArrayList<Item> stock; //holds each Item in an ArrayList
+    private Money money; //the money object for this world
+    private boolean flag = true; //flag for keypress
+    private boolean flag1 = true; //second flag for keypress
     /**
      * Constructor for objects of class VendingMachineWorld.
      * 
      */
     public VendingMachineWorld()
     {    
-        super(880, 780, 1, true);
+        super(880, 780, 1, true); //creates a new World()
         stock = new ArrayList<Item>();
-        setBackground("vendingmachine.jpg");
+        setBackground("vendingmachine.jpg"); //the background 
         money = new Money();
         addObject(money, 800, 700);
         MoneyAmount moneyAmount = new MoneyAmount();
