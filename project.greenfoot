@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Dec 12 22:03:14 PST 2017
+#Tue Dec 12 22:28:03 PST 2017
 editor.fx.0.height=700
 target2.width=80
 target8.name=StockDisplay
@@ -62,6 +62,7 @@ readme.width=47
 target9.name=MoneyAmount
 target5.height=50
 target8.naviview.expanded=true
+class.Water.image=water.jpg
 target10.name=Lays
 dependency13.type=UsesDependency
 target7.editor.width=1296
@@ -144,6 +145,7 @@ class.Doritos.image=doritos.jpg
 target7.type=ClassTarget
 target7.editor.x=-8
 target10.width=80
+class.Water.superclass=Item
 target3.y=0
 target11.width=80
 target3.x=0
@@ -174,7 +176,6 @@ target9.showInterface=false
 target7.name=VendingMachineWorld
 target9.naviview.expanded=true
 dependency11.type=UsesDependency
-class.Stock.superclass=greenfoot.Actor
 package.numDependencies=17
 class.Lays.superclass=Item
 target9.editor.y=-8

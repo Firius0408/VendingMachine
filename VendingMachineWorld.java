@@ -42,6 +42,9 @@ public class VendingMachineWorld extends World
         Gatorade gatorade = new Gatorade();
         stock.add(gatorade);
         addObject(gatorade, 110, 400);
+        Water water = new Water();
+        stock.add(water);
+        addObject(water, 330, 400);
     }
     
     public void act() {
@@ -63,15 +66,18 @@ public class VendingMachineWorld extends World
     
     public void checky() {
         if (Greenfoot.isKeyDown("space") && flag) {
-            int choice = Greenfoot.getRandomNumber(stock.size());
-            if(stock.get(choice).getStock() <= 0) {
-                stock.get(choice).restore();
+            String choice = stock.get(Greenfoot.getRandomNumber(stock.size())).getName();
+            for (Item i : stock) {
+                if (i.getStock() <= 0) {
+                    choice = i.getName();
+                    i.restore();
+                    break;
+                }
             }
-            addStock(stock.get(choice).getName(), 1);
+            addStock(choice, 1);
             flag = false;
         }
-        
-        if (!Greenfoot.isKeyDown("space")) {
+        else if (!Greenfoot.isKeyDown("space")) {
             flag = true;
         }
         
@@ -82,9 +88,8 @@ public class VendingMachineWorld extends World
                 i++;
             }
             flag1 = false;
-        }
-        
-        if(!Greenfoot.isKeyDown("F5")) {
+        }        
+        else if(!Greenfoot.isKeyDown("F5")) {
             flag1 = true;
         }
     }
