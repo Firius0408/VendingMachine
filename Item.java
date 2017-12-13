@@ -11,6 +11,7 @@ public class Item extends Actor
     private double price;
     private int stock;
     private VendingMachineWorld world;
+    private String name;
     /**
      * Act - do whatever the Item wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,8 +24,9 @@ public class Item extends Actor
         checky();
     }    
 
-    public Item(double price) {
+    public Item(double price, String name) {
         this.price = price;
+        this.name = name;
         stock = Greenfoot.getRandomNumber(10);
     }
 
@@ -33,16 +35,16 @@ public class Item extends Actor
     }
 
     public void choose() {
-        if(world.getMoney() >= price) {
+        if(world.getMoneyObj().getMoney() >= price) {
             world.getMoneyObj().removeMoney(price);
             stock--;
             falling();
         }
-               
+
     }
-    
+
     protected void falling() {
-        
+
     }
 
     public void clicky() {
@@ -53,8 +55,21 @@ public class Item extends Actor
 
     public void checky() {
         if (stock <= 0) {
-            getWorld().removeObject(this);
+            world.removeObject(this);
+            world.removeStock(this);
         }
 
+    }
+
+    public double getPrice() {
+        return price;
+    }
+    
+    public int getStock() {
+        return stock;
+    }
+    
+    public String getName() {
+        return name;
     }
 }

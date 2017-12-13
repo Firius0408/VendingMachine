@@ -10,6 +10,7 @@ public class Doritos extends Item
 {
     private static GreenfootImage image = new GreenfootImage("doritos.jpg");
     private static double price = 3.98;
+    private static String name = "Doritos";
     /**
      * Act - do whatever the Doritos wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,7 +22,7 @@ public class Doritos extends Item
     */
     
     public Doritos() {
-        super(price);
+        super(price, name);
         image.scale(190, 250);
         image.drawString(Double.toString(price), 85, 20);
         setImage(image);

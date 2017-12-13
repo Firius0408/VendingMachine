@@ -10,6 +10,7 @@ public class Lays extends Item
 {
     private static GreenfootImage image = new GreenfootImage("lays.jpg");
     private static double price = 3.28;
+    private static String name = "Lays";
     /**
      * Act - do whatever the Lays wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -21,7 +22,7 @@ public class Lays extends Item
      */
 
     public Lays() {
-        super(price);
+        super(price, name);
         image.scale(190, 250);
         image.drawString(Double.toString(price), 85, 20);
         setImage(image);

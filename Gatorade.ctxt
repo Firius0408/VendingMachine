@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Gatorade
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Gatorade\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Gatorade()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Gatorade\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\r\n\ \ \ \ public\ void\ act()\ \r\n\ \ \ \ {\r\n\ \ \ \ //\ Add\ your\ action\ code\ here.\r\n\ \ \ \ }\ \ \ \r\n
+comment2.params=
+comment2.target=void\ falling()
+numComments=3

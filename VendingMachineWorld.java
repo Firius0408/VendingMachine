@@ -16,7 +16,6 @@ public class VendingMachineWorld extends World
      */
     public VendingMachineWorld()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(880, 780, 1, true);
         stock = new ArrayList<Item>();
         setBackground("vendingmachine.jpg");
@@ -24,6 +23,8 @@ public class VendingMachineWorld extends World
         addObject(money, 800, 700);
         MoneyAmount moneyAmount = new MoneyAmount();
         addObject(moneyAmount, 200, 700);
+        StockDisplay stockDisplay = new StockDisplay();
+        addObject(stockDisplay, 560, 700);
         Lays lays = new Lays();
         stock.add(lays);
         addObject(lays, 110, 125);
@@ -36,13 +37,24 @@ public class VendingMachineWorld extends World
         Takis takis = new Takis();
         stock.add(takis);
         addObject(takis, 770, 125);
-    }
-
-    public double getMoney() {
-        return money.getMoney();
+        Gatorade gatorade = new Gatorade();
+        stock.add(gatorade);
+        addObject(gatorade, 110, 400);
     }
     
     public Money getMoneyObj() {
         return money;
+    }
+    
+    public void removeStock(Item item) {
+        stock.remove(item);
+    }
+    
+    public String inStock() {
+        String s = "";
+        for (Item i : stock) {
+            s += i.getName() + ": stock(" + i.getStock() + ") price (" + i.getPrice() + ")\n";
+        }
+        return s;
     }
 }

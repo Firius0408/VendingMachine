@@ -9,7 +9,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class FallingItem extends Actor
 {
     GreenfootImage image;
-    boolean flag;
     /**
      * Act - do whatever the FallingItem wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,7 +24,6 @@ public class FallingItem extends Actor
         this.image = image;
         setImage(image);
         setRotation(90);
-        flag = true;
     }
 
     public void falling() {
@@ -33,14 +31,8 @@ public class FallingItem extends Actor
     }
 
     public void checkBottom() {
-        if(isAtEdge() && flag) {
-            if (Greenfoot.getRandomNumber(10) < 9) {
-                getWorld().removeObject(this);
-            }
-            else {
-                flag = false;
-            }
+        if(isAtEdge()) {
+            getWorld().removeObject(this);
         }
     }
 }
-
