@@ -16,6 +16,4 @@ comment6.params=
 comment6.target=java.lang.String\ getMoneyString()
 comment7.params=
 comment7.target=void\ clicky()
-comment8.params=str
-comment8.target=boolean\ isInteger(java.lang.String)
-numComments=9
+numComments=8

@@ -28,9 +28,7 @@ public class Money extends Actor
     }
 
     public void addMoney() {
-        if(Greenfoot.getRandomNumber(10) < 9) {
             money++;
-        }
     }
 
     public void removeMoney(double price) {
@@ -50,7 +48,7 @@ public class Money extends Actor
             addMoney();
         }
     }
-
+    /**
     public boolean isInteger(String str) { // checks user input to ensure it's an integer
         if (str == null) {
             return false;
@@ -74,4 +72,5 @@ public class Money extends Actor
         }
         return true;
     }
+    */
 }

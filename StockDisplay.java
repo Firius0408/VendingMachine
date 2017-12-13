@@ -17,13 +17,14 @@ public class StockDisplay extends Actor
     public void act() 
     {
         // Add your action code here.
+        setDisplay();
     }    
     
     public StockDisplay() {
-        image = new GreenfootImage(300, 400);
+        image = new GreenfootImage(300, 300);
         image.setColor(Color.WHITE);
         image.fill();
-        image.setFont(new Font(Font.DIALOG, Font.PLAIN, 100));
+        image.setFont(new Font(Font.DIALOG, Font.PLAIN, 20));
         image.setColor(Color.BLACK);
         setImage(image);
     }
@@ -37,6 +38,6 @@ public class StockDisplay extends Actor
         image.setColor(Color.WHITE);
         image.fill();
         image.setColor(Color.BLACK);
-        image.drawString(world.inStock(), 100, 300);
+        image.drawString(world.inStock(), 10, 30);
     }
 }

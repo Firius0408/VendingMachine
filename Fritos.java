@@ -33,4 +33,8 @@ public class Fritos extends Item
         tempImage.scale(190, 250);
         getWorld().addObject(new FallingItem(tempImage), getX(), getY());
     }
+    
+    public void restore() {
+        setImage(image);
+    }
 }

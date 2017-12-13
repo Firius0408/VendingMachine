@@ -16,7 +16,6 @@ public class FallingItem extends Actor
     public void act() 
     {
         // Add your action code here.
-        falling();
         checkBottom();
     }    
 
@@ -33,6 +32,9 @@ public class FallingItem extends Actor
     public void checkBottom() {
         if(isAtEdge()) {
             getWorld().removeObject(this);
+        }
+        else {
+            falling();
         }
     }
 }

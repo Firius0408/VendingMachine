@@ -33,4 +33,8 @@ public class Gatorade extends Item
         tempImage.scale(120, 285);
         getWorld().addObject(new FallingItem(tempImage), getX(), getY());
     }
+    
+    public void restore() {
+        setImage(image);
+    }
 }

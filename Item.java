@@ -20,7 +20,6 @@ public class Item extends Actor
     public void act() 
     {
         // Add your action code here.
-        clicky();
         checky();
     }    
 
@@ -34,31 +33,24 @@ public class Item extends Actor
         this.world = (VendingMachineWorld) world;
     }
 
-    public void choose() {
-        if(world.getMoneyObj().getMoney() >= price) {
-            world.getMoneyObj().removeMoney(price);
-            stock--;
-            falling();
-        }
-
-    }
-
     protected void falling() {
 
     }
 
-    public void clicky() {
-        if(Greenfoot.mouseClicked(this)) {
-            choose();
-        }
-    }
-
     public void checky() {
         if (stock <= 0) {
-            world.removeObject(this);
-            world.removeStock(this);
+            setImage(new GreenfootImage(1, 1));
         }
-
+        
+        else if(Greenfoot.mouseClicked(this) && world.getMoneyObj().getMoney() >= price) {
+            world.getMoneyObj().removeMoney(price);
+            stock--;
+            falling();
+        }
+    }
+    
+    protected void restore() {
+        
     }
 
     public double getPrice() {
@@ -71,5 +63,9 @@ public class Item extends Actor
     
     public String getName() {
         return name;
+    }
+    
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }

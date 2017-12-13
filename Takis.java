@@ -33,4 +33,8 @@ public class Takis extends Item
         tempImage.scale(220, 250);
         getWorld().addObject(new FallingItem(tempImage), getX(), getY());
     }
+    
+    public void restore() {
+        setImage(image);
+    }
 }

@@ -6,4 +6,6 @@ comment1.target=Gatorade()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Gatorade\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n\r\n\ \ \ \ public\ void\ act()\ \r\n\ \ \ \ {\r\n\ \ \ \ //\ Add\ your\ action\ code\ here.\r\n\ \ \ \ }\ \ \ \r\n
 comment2.params=
 comment2.target=void\ falling()
-numComments=3
+comment3.params=
+comment3.target=void\ restore()
+numComments=4

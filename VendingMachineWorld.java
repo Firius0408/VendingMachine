@@ -10,6 +10,8 @@ public class VendingMachineWorld extends World
 {
     private ArrayList<Item> stock;
     private Money money;
+    private boolean flag = true;
+    private boolean flag1 = true;
     /**
      * Constructor for objects of class VendingMachineWorld.
      * 
@@ -42,18 +44,60 @@ public class VendingMachineWorld extends World
         addObject(gatorade, 110, 400);
     }
     
+    public void act() {
+        checky();
+    }
+
     public Money getMoneyObj() {
         return money;
     }
-    
-    public void removeStock(Item item) {
-        stock.remove(item);
+
+    public void addStock(String name, int stockCount) {
+        for (int i = 0; i < stock.size(); i++) {
+            if(stock.get(i).getName().equals(name)) {
+                stock.get(i).setStock(stock.get(i).getStock() + stockCount);
+                break;
+            }
+        }
     }
     
+    public void checky() {
+        if (Greenfoot.isKeyDown("space") && flag) {
+            int choice = Greenfoot.getRandomNumber(stock.size());
+            if(stock.get(choice).getStock() <= 0) {
+                stock.get(choice).restore();
+            }
+            addStock(stock.get(choice).getName(), 1);
+            flag = false;
+        }
+        
+        if (!Greenfoot.isKeyDown("space")) {
+            flag = true;
+        }
+        
+        if(Greenfoot.isKeyDown("F5") && flag1) {
+            int i = 0;
+            while(i < 100) {
+                money.addMoney();
+                i++;
+            }
+            flag1 = false;
+        }
+        
+        if(!Greenfoot.isKeyDown("F5")) {
+            flag1 = true;
+        }
+    }
+
     public String inStock() {
         String s = "";
         for (Item i : stock) {
-            s += i.getName() + ": stock(" + i.getStock() + ") price (" + i.getPrice() + ")\n";
+            if(i.getStock() > 0) {
+                s += i.getName() + ": stock (" + i.getStock() + ") price (" + i.getPrice() + ")\n";
+            }
+            else {
+                s += i.getName() + " is currently out\n";
+            }
         }
         return s;
     }
