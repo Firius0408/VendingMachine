@@ -9,8 +9,8 @@ import java.awt.*;
  */
 public class Money extends Actor
 {
-    private double money;
-    private static DecimalFormat format = new DecimalFormat("###,###,#00.00");
+    private double money; // the amount of money the user has
+    private static DecimalFormat format = new DecimalFormat("###,###,#00.00"); // used for rounding
     /**
      * Act - do whatever the Money wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -48,7 +48,8 @@ public class Money extends Actor
             addMoney();
         }
     }
-    /**
+    /** When I was using the lastest greenfoot I could prompt the user to enter a specific dollar amount to add and used this method to check that the input supplied was an integer. Unfortantely the old Greenfoot cannot ask the user
+     * so I commented this out and just had it add one dollar every time the coinslot was clicked.
     public boolean isInteger(String str) { // checks user input to ensure it's an integer
         if (str == null) {
             return false;

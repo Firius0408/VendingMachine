@@ -23,7 +23,7 @@ public class MoneyAmount extends Actor
     public MoneyAmount() {     
         image = new GreenfootImage(400, 200);
         image.setColor(Color.WHITE);
-        image.fill();
+        image.fill(); // sets background white
         image.setFont(new Font(Font.DIALOG, Font.PLAIN, 100));
         image.setColor(Color.BLACK);
         setImage(image);
@@ -33,7 +33,7 @@ public class MoneyAmount extends Actor
         this.world = (VendingMachineWorld) world;
     }
     
-    public void setDisplay() {
+    public void setDisplay() { // refreshes the money display
         image.clear();
         image.setColor(Color.WHITE);
         image.fill();

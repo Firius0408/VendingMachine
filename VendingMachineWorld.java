@@ -19,7 +19,7 @@ public class VendingMachineWorld extends World
     public VendingMachineWorld()
     {    
         super(880, 780, 1, true); //creates a new World()
-        stock = new ArrayList<Item>();
+        stock = new ArrayList<Item>(); // the ArrayList holding the items in the vending machine
         setBackground("vendingmachine.jpg"); //the background 
         money = new Money();
         addObject(money, 800, 700);
@@ -48,23 +48,23 @@ public class VendingMachineWorld extends World
     }
     
     public void act() {
-        checky();
+        checky(); // checks things every cycle
     }
 
-    public Money getMoneyObj() {
+    public Money getMoneyObj() { // returns the Money object used in this world
         return money;
     }
 
-    public void addStock(String name, int stockCount) {
+    public void addStock(String name, int stockCount) { // increases the stock of the specified item in the ArrayList stock
         for (int i = 0; i < stock.size(); i++) {
             if(stock.get(i).getName().equals(name)) {
-                stock.get(i).setStock(stock.get(i).getStock() + stockCount);
+                stock.get(i).setStock(stock.get(i).getStock() + stockCount); // I would've used a for-each loop so it wouldn't be so messy but requirements say I need a for loop so...
                 break;
             }
         }
     }
     
-    public void checky() {
+    public void checky() { //checks for certain keypresses that allow the user to increase stock or increase money by 100
         if (Greenfoot.isKeyDown("space") && flag) {
             String choice = stock.get(Greenfoot.getRandomNumber(stock.size())).getName();
             for (Item i : stock) {
@@ -75,10 +75,10 @@ public class VendingMachineWorld extends World
                 }
             }
             addStock(choice, 1);
-            flag = false;
+            flag = false; // flag variable used to check when key is released so that action is only performed once per keypress
         }
         else if (!Greenfoot.isKeyDown("space")) {
-            flag = true;
+            flag = true; // resets flag variable
         }
         
         if(Greenfoot.isKeyDown("F5") && flag1) {
@@ -87,16 +87,16 @@ public class VendingMachineWorld extends World
                 money.addMoney();
                 i++;
             }
-            flag1 = false;
+            flag1 = false; // flag variable used to check when key is released so that action is only performed once per keypress
         }        
         else if(!Greenfoot.isKeyDown("F5")) {
-            flag1 = true;
+            flag1 = true; // resets flag variable
         }
     }
 
-    public String inStock() {
+    public String inStock() { // traverses the ArraryList of items and returns a String containing important information in a user friendly format. Used in StockDisplay
         String s = "";
-        for (Item i : stock) {
+        for (Item i : stock) {  
             if(i.getStock() > 0) {
                 s += i.getName() + ": stock (" + i.getStock() + ") price (" + i.getPrice() + ")\n";
             }

@@ -8,7 +8,7 @@ import java.awt.*;
  */
 public class StockDisplay extends Actor
 {
-    private GreenfootImage image;
+    private GreenfootImage image; // transparent image
     private VendingMachineWorld world;
     /**
      * Act - do whatever the StockDisplay wants to do. This method is called whenever
@@ -23,17 +23,17 @@ public class StockDisplay extends Actor
     public StockDisplay() {
         image = new GreenfootImage(300, 300);
         image.setColor(Color.WHITE);
-        image.fill();
+        image.fill(); // makes image background white
         image.setFont(new Font(Font.DIALOG, Font.PLAIN, 20));
         image.setColor(Color.BLACK);
-        setImage(image);
+        setImage(image); 
     }
     
-    protected void addedToWorld(World world) {
-        this.world = (VendingMachineWorld) world;
+    protected void addedToWorld(World world) { // called when StockDisplay is added to the world. Used to set VendingMachineWorld world equal to the current world
+        this.world = (VendingMachineWorld) world; //casts the world to type VendingMachineWorld so that VendingMachineWorld specific methods can be used
     }
     
-    public void setDisplay() {
+    public void setDisplay() { // refreshes the stock display
         image.clear();
         image.setColor(Color.WHITE);
         image.fill();

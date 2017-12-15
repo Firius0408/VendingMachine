@@ -12,7 +12,7 @@ public class Fritos extends Item
     private static double price = 4.93;
     private static String name = "Fritos";
     /**
-     * Act - do whatever the Lays wants to do. This method is called whenever
+     * Act - do whatever the Fritos wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
 
     public void act() 

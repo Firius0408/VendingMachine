@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class FallingItem extends Actor
+public class FallingItem extends Actor // Created when an item is clicked and it starts falling
 {
     GreenfootImage image;
     /**
@@ -22,19 +22,19 @@ public class FallingItem extends Actor
     public FallingItem(GreenfootImage image) {
         this.image = image;
         setImage(image);
-        setRotation(90);
+        setRotation(90); // sets the image sideways
     }
 
     public void falling() {
-        move(6);
+        move(6); // moves it down
     }
 
-    public void checkBottom() {
+    public void checkBottom() { // checks to see if the item is at the bottom
         if(isAtEdge()) {
-            getWorld().removeObject(this);
+            getWorld().removeObject(this); // if it is it gets removed
         }
         else {
-            falling();
+            falling(); // else move down some more
         }
     }
 }
